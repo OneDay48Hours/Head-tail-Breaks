@@ -11,6 +11,14 @@
 import pandas as pd
 import numpy as np
 
+#get required arguments
+def parse_arg():
+    parser =  argparse.ArgumentParser()
+    parser.add_argument("-f", "--file_path", type=str)
+    parser.add_argument("-c", "--column_index", type=int)
+    parser.add_argument("-v", "--headtail_version", type=int)
+    args = parser.parse_args()
+    return args
 
 #compute head tail break points version1
 def htb1(data):
@@ -120,5 +128,9 @@ def main(excel_file_path:str, index:int, version:int):
 
 if __name__ == "__main__":
     
-    file_path = '/Users/***/****/test.xlsx'
-    main(file_path, 0, 2)
+    # file_path = '/Users/***/****/test.xlsx'
+    # main(file_path, 0, 2)
+  
+    args = parse_arg()
+    main(args.file_path, args.column_index, args.headtail_version)
+  
