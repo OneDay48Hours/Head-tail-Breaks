@@ -4,6 +4,7 @@ Head/tail Breaks for Natural Cities
 # Requirements
 
 Pandas
+
 Numpy
 
 # Run the Project
